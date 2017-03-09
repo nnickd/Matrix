@@ -1,0 +1,55 @@
+# do not touch this line
+configVersion: 2
+
+name: mappo
+description: maps
+keywords: ''
+
+dataTypes:
+  location:
+    latitude: float
+    longitude: float
+    country: string
+    region: string
+    city: string
+    zipCode: string
+    timeZone: string
+
+screens:
+  - - map
+  - - country
+  - - region
+  - - city
+  - - zipCode
+  - - timeZone
+
+widgets:
+  map:
+    display: map
+    type: location
+    label: 'Map'
+  country:
+    display: label
+    type: location
+    key: country
+    label: Country
+  region:
+    display: label
+    type: location
+    key: region
+    label: Region
+  city:
+    display: label
+    type: location
+    key: city
+    label: City
+  zipCode:
+    display: label
+    type: location
+    key: zipCode
+    label: Zip Code
+  timeZone:
+    display: label
+    type: location
+    key: timeZone
+    label: Time Zone

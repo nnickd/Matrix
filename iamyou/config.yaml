@@ -1,0 +1,78 @@
+# do not touch this line
+configVersion: 2
+
+name: iamyou
+description: gyroscope accelerometer magnetometer
+keywords: ''
+
+dataTypes:
+  sensor:
+    name: string
+    x: float
+    y: float
+    z: float
+
+sensors:
+  - gyroscope
+  - accelerometer
+  - magnetometer
+
+screens:
+  - - pickSensor
+  - - refresh
+  - - name
+  - - bar
+  - - x
+  - - y
+  - - z
+
+widgets:
+  pickSensor:
+    control: radio
+    map:
+      - event: gyroscope
+        value: Gyroscope
+      - event: accelerometer
+        value: Accelerometer
+      - event: magnetometer
+        value: Magnetometer
+    label: Pick Sensor
+  refresh:
+    control: range
+    event: speed
+    min: 10
+    max: 10000
+    label: Refresh Rate
+  name:
+    display: label
+    type: sensor
+    key: name
+    label: Sensor
+  bar:
+    display: bar
+    type: sensor
+    keys: x,y,z
+    format: avg
+    realtime: true
+    label: Average X Y Z
+  x:
+    display: line
+    type: sensor
+    key: x
+    format: avg
+    realtime: true
+    label: Average X
+  y:
+    display: line
+    type: sensor
+    key: y
+    format: avg
+    realtime: true
+    label: Average Y
+  z:
+    display: line
+    type: sensor
+    key: z
+    format: avg
+    realtime: true
+    label: Average Z
